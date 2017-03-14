@@ -14,16 +14,21 @@
 						weight: null,
 						height: null,
 						enterData: function(){
+						this.weight=prompt ("Proszę podać wagę")
+						this.height=prompt ("Proszę podać wzrost")
 							// enter weight and height, and assign them to the object properties
 						},
 						calculate: function(){
-							return // create a formula for calculating bmi
+							return this.weight / this.height
+							// create a formula for calculating bmi
 						},
 						display: function(){
+							alert (this.calculate());
 							// display the result in a popup window
 						}
 				}
-			
+			BMI.enterData();
+			BMI.display();
 				// call BMI methods
 				// ...
 			
