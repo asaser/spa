@@ -7,6 +7,55 @@
 	<body>
 		<h1>Houses for sale</h1>
 		<script>
+		
+            function House(bedrooms, facilities, price, street, city, phone) {
+                this.bedrooms = bedrooms;
+                this.facilities = facilities;
+                this.price = price;
+                this.phone = phone;
+                
+				var address = {
+                    street: street,
+                    city: city
+                };
+				
+                this.changePrice = function (newPrice) {
+                    this.price = newPrice;
+                };
+				
+                this.addFacility = function (newFacility) {
+                    this.facilities = facilities;
+                    facilities[facilities.length] = newFacility;
+                };
+				
+                this.descrition = function () {
+                    return console.log("Bedrooms: " + this.bedrooms + "\nFacilities: " + this.facilities.join(" and ") + "\nPrice: " + this.price + "\nAddress: " + address.street + ", " + address.city + "\nPhone number: " + this.phone);
+                };
+            }
+			
+            var i;
+            var house = [
+                new House("1", ["vacuum cleaner"], 312, "Bociana", "Kraków", 987789987),
+                new House("2", ["swimming pool", "garden"], 123, "Wawel", "Kraków", 909090900),
+                new House("3", ["garage"], 321, "Floriańska", "Kraków", 899898899),
+                new House("4", ["garden"], 1234, "Karnaty", "Stalowa Wola", 123456789),
+                new House("5", ["swimming pool"], 4321, "Narutowicza", "Stalowa Wola", 321432143)
+            ];
+            function generateDescription() {
+                console.log("Description:");
+				
+                for (i = 0; i < house.length; i += 1) {
+                    house[i].descrition();
+                }
+            }
+			
+            generateDescription();
+            house[1].changePrice(8767567);
+            house[2].changePrice(567846);
+            house[3].addFacility("amazing neighborhood");
+            house[4].addFacility("something amazing too");
+            house[6].addFacility("monument in the garden");
+            generateDescription();generateDescription();
 		</script>
 	</body>
 </html>

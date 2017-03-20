@@ -8,17 +8,50 @@
 		<h1>Create methods</h1>
 		<script>
 			var myArray = {
-					arr: [3,4,76,1,5,787,33,76,1,99,45,235,53,23],
-					min: function(){
-						// maximum value (sort the arr and take the last value, use a built-in function)
-					},		
-					max: function(){},		// look at the min method comment
-					avg: function(){},		// avarage value
-					lth: function(val){}	// the number of arr values less than 'val'
-			};
+					arr: [3, 4, 76, 1, 5, 787, 33, 76, 1, 99, 45, 235, 53, 23],
+					min: function () {
+						this.arr.sort(function (a, b) {
+                            return a - b;
+                        });
+                        window.console.log("Minimum value: " + this.arr[0]);
+						
+					// maximum value (sort the arr and take the last value, use a built-in function)
+				    },
+					max: function () {
+						this.arr.sort(function (a, b) {
+                            return a - b;
+                        });
+                        window.console.log("Maksimum value: " + this.arr[10]);
+                    },		
+					
+					// look at the min method comment
+					avg: function () {
+                        var i, avarage, sum = 0;
+                        for (i = 0; i < this.arr.length; i += 1) {
+                            sum += this.arr[i];
+                        }
+                        avarage = (sum / this.arr.length);
+                        window.console.log("Avarage value: " + avarage);
+                    },		
+					
+					// avarage value
+					lth: function (val) {
+                        var i, less = 0;
+                        for (i = 0; i < this.arr.length; i += 1) {
+                            if (val > this.arr[i]) {
+                                less += 1;
+                            }
+                        }
+						// the number of arr values less than 'val'
+                        window.console.log("Number of arr values less " + val + ": " + less);
+                    }	
+			    };
+					// display results (min,max,avg,lth) in the console
 			
-			// display results (min,max,avg,lth) in the console
-			// ...
+			myArray.min();
+            myArray.max();
+            myArray.avg();
+            myArray.lth(12);
 		</script>
 	</body>
 </html>

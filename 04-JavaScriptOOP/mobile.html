@@ -12,16 +12,14 @@
 		model: "Sony X-Peria",
 		production: 2014,
 		phone: true,
-		somethig: {country: "USA", name: "Sony"},
+		somethig: {high: 120, width: 50}, //tutaj coś nie wchodzi :/
+		slots: ["1", "2", "3"],
 		
-		show: function()
-		{
-		alert("Nazwa" + model);
-		}
-		}
-		
-		var button = mobile.createElement('Button");
-		
+		show: function() {
+		window.alert("Model: " + this.model + " \nProduction" + this.production + " \nPhone " + this.phone + "\nSlots: " + this.slots[0] + ", " + this.slots[1] + ", " + this.slots[2]);
+			    }
+			};
 		</script>
+		<button onClick="mobile.show()">Click</button>
 	</body>
 </html>

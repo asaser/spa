@@ -6,16 +6,23 @@
 	</head>
 	<body>
 		<h1>Try to guess</h1>
-
+		
 		<script>
 			// read user's number (popup window)
-			
+			var user = prompt("Please choose a number with numerical interval 1 to 5");			
+
 			// create a random number
+			var number = Math.floor((Math.random() *5) +1);
 			
 			// compare the numbers
-			
+			while(user != number){
+				console.log("Sorry");
+				user = prompt("Please guesss again");		
+			}
+		
 			// show results (popup window)
-			
+			window.alert("Good Work");
+			console.log("Good Work");
 		</script>
 	</body>
 </html>
